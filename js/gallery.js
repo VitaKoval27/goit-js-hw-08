@@ -68,14 +68,14 @@ const gallery = document.querySelector('.gallery');
 function createGallery(arr) {
   return arr
     .map(
-      image => `
+      ({ preview, original, description }) => `
     <li class="gallery-item">
-       <a class="gallery-link" href="${image.original}">
+       <a class="gallery-link" href="${original}">
        <img
         class="gallery-image"
-        src="${image.preview}"
-        data-source="${image.original}"
-        alt="${image.description}"
+        src="${preview}"
+        data-source="${original}"
+        alt="${description}"
       />
      </a>
     </li>
